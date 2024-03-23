@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            exit_Button = new Button();
             sportSpeed_button = new Button();
             comfortSpeed_button = new Button();
             stopButton_Click = new Button();
@@ -45,6 +46,7 @@
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.Controls.Add(exit_Button);
             panel1.Controls.Add(sportSpeed_button);
             panel1.Controls.Add(comfortSpeed_button);
             panel1.Controls.Add(stopButton_Click);
@@ -60,11 +62,26 @@
             panel1.Size = new Size(688, 873);
             panel1.TabIndex = 0;
             // 
+            // exit_Button
+            // 
+            exit_Button.FlatStyle = FlatStyle.System;
+            exit_Button.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            exit_Button.ForeColor = SystemColors.ButtonFace;
+            exit_Button.Location = new Point(266, 799);
+            exit_Button.Name = "exit_Button";
+            exit_Button.Size = new Size(138, 49);
+            exit_Button.TabIndex = 10;
+            exit_Button.Text = "Exit";
+            exit_Button.UseVisualStyleBackColor = true;
+            exit_Button.Click += exit_Button_Click;
+            // 
             // sportSpeed_button
             // 
+            sportSpeed_button.FlatAppearance.BorderSize = 0;
+            sportSpeed_button.FlatStyle = FlatStyle.System;
             sportSpeed_button.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
             sportSpeed_button.ForeColor = SystemColors.GrayText;
-            sportSpeed_button.Location = new Point(398, 650);
+            sportSpeed_button.Location = new Point(382, 650);
             sportSpeed_button.Name = "sportSpeed_button";
             sportSpeed_button.Size = new Size(223, 122);
             sportSpeed_button.TabIndex = 9;
@@ -74,6 +91,9 @@
             // 
             // comfortSpeed_button
             // 
+            comfortSpeed_button.BackColor = SystemColors.Control;
+            comfortSpeed_button.FlatAppearance.BorderSize = 0;
+            comfortSpeed_button.FlatStyle = FlatStyle.System;
             comfortSpeed_button.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
             comfortSpeed_button.ForeColor = SystemColors.GrayText;
             comfortSpeed_button.Location = new Point(32, 650);
@@ -81,31 +101,37 @@
             comfortSpeed_button.Size = new Size(223, 122);
             comfortSpeed_button.TabIndex = 8;
             comfortSpeed_button.Text = "SPORT";
-            comfortSpeed_button.UseVisualStyleBackColor = true;
+            comfortSpeed_button.UseVisualStyleBackColor = false;
             comfortSpeed_button.Click += comfortSpeed_button_Click;
             // 
             // stopButton_Click
             // 
+            stopButton_Click.BackColor = SystemColors.AppWorkspace;
+            stopButton_Click.FlatAppearance.BorderSize = 0;
+            stopButton_Click.FlatStyle = FlatStyle.System;
             stopButton_Click.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            stopButton_Click.ForeColor = SystemColors.GrayText;
-            stopButton_Click.Location = new Point(348, 245);
+            stopButton_Click.ForeColor = Color.Black;
+            stopButton_Click.Location = new Point(382, 245);
             stopButton_Click.Name = "stopButton_Click";
-            stopButton_Click.Size = new Size(273, 139);
+            stopButton_Click.Size = new Size(223, 139);
             stopButton_Click.TabIndex = 6;
             stopButton_Click.Text = "STOP";
-            stopButton_Click.UseVisualStyleBackColor = true;
+            stopButton_Click.UseVisualStyleBackColor = false;
             stopButton_Click.Click += stopButton_Click_Click;
             // 
             // forwardButton_Click
             // 
+            forwardButton_Click.BackColor = SystemColors.AppWorkspace;
+            forwardButton_Click.FlatAppearance.BorderSize = 0;
+            forwardButton_Click.FlatStyle = FlatStyle.System;
             forwardButton_Click.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            forwardButton_Click.ForeColor = SystemColors.GrayText;
-            forwardButton_Click.Location = new Point(12, 245);
+            forwardButton_Click.ForeColor = Color.Black;
+            forwardButton_Click.Location = new Point(32, 245);
             forwardButton_Click.Name = "forwardButton_Click";
-            forwardButton_Click.Size = new Size(273, 139);
+            forwardButton_Click.Size = new Size(223, 139);
             forwardButton_Click.TabIndex = 5;
             forwardButton_Click.Text = "START";
-            forwardButton_Click.UseVisualStyleBackColor = true;
+            forwardButton_Click.UseVisualStyleBackColor = false;
             forwardButton_Click.Click += forwardButton_Click_Click;
             // 
             // panel3
@@ -195,5 +221,6 @@
         private Button forwardButton_Click;
         private Button sportSpeed_button;
         private Button comfortSpeed_button;
+        private Button exit_Button;
     }
 }

@@ -37,20 +37,45 @@ namespace ArduinoCarControl
         private void forwardButton_Click_Click(object sender, EventArgs e)
         {
             SendCommand('F');
+            forwardButton_Click.Enabled = false;
+            if(stopButton_Click.Enabled == false)
+            {
+                sportSpeed_button.Enabled = true;
+            }
         }
 
         private void stopButton_Click_Click(object sender, EventArgs e)
         {
             SendCommand('S');
+            stopButton_Click.Enabled = false;
+            if (forwardButton_Click.Enabled == false)
+            { 
+                forwardButton_Click.Enabled = true;
+            }
         }
 
         private void sportSpeed_button_Click(object sender, EventArgs e)
         {
             SendCommand('+');
+            sportSpeed_button.Enabled = false;
+            if(comfortSpeed_button.Enabled == false)
+            {
+                comfortSpeed_button.Enabled = true;
+            }
         }
         private void comfortSpeed_button_Click(object sender, EventArgs e)
         {
             SendCommand('-');
+            comfortSpeed_button.Enabled = false;
+            if(sportSpeed_button.Enabled == false)
+            {
+                sportSpeed_button.Enabled = true;
+            }
+        }
+
+        private void exit_Button_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
