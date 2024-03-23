@@ -172,7 +172,7 @@
             button2.ForeColor = Color.Transparent;
             button2.Location = new Point(0, 115);
             button2.Name = "button2";
-            button2.Size = new Size(561, 53);
+            button2.Size = new Size(511, 53);
             button2.TabIndex = 1;
             button2.Text = "Turn the car on or off";
             button2.TextAlign = ContentAlignment.MiddleLeft;
