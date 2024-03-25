@@ -59,5 +59,15 @@ namespace ArduinoCarControl.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap f6905d86031ef5449c06ffabf5e87df9 {
+            get {
+                object obj = ResourceManager.GetObject("f6905d86031ef5449c06ffabf5e87df9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

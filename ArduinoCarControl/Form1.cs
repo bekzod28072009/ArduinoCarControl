@@ -4,6 +4,7 @@ namespace ArduinoCarControl
 {
     public partial class Form1 : Form
     {
+        int speed = 200;
         SerialPort serialPort = new SerialPort("COM3", 9600);
         public Form1()
         {
@@ -38,7 +39,7 @@ namespace ArduinoCarControl
         {
             SendCommand('F');
             forwardButton_Click.Enabled = false;
-            if(stopButton_Click.Enabled == false)
+            if (stopButton_Click.Enabled == false)
             {
                 sportSpeed_button.Enabled = true;
             }
@@ -49,7 +50,7 @@ namespace ArduinoCarControl
             SendCommand('S');
             stopButton_Click.Enabled = false;
             if (forwardButton_Click.Enabled == false)
-            { 
+            {
                 forwardButton_Click.Enabled = true;
             }
         }
@@ -58,7 +59,7 @@ namespace ArduinoCarControl
         {
             SendCommand('+');
             sportSpeed_button.Enabled = false;
-            if(comfortSpeed_button.Enabled == false)
+            if (comfortSpeed_button.Enabled == false)
             {
                 comfortSpeed_button.Enabled = true;
             }
@@ -67,7 +68,7 @@ namespace ArduinoCarControl
         {
             SendCommand('-');
             comfortSpeed_button.Enabled = false;
-            if(sportSpeed_button.Enabled == false)
+            if (sportSpeed_button.Enabled == false)
             {
                 sportSpeed_button.Enabled = true;
             }
@@ -76,6 +77,11 @@ namespace ArduinoCarControl
         private void exit_Button_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void score_button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
