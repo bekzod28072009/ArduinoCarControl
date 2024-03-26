@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
-            score_button = new Button();
+            speedTxt = new Button();
             exit_Button = new Button();
             sportSpeed_button = new Button();
             comfortSpeed_button = new Button();
@@ -47,7 +47,7 @@
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
-            panel1.Controls.Add(score_button);
+            panel1.Controls.Add(speedTxt);
             panel1.Controls.Add(exit_Button);
             panel1.Controls.Add(sportSpeed_button);
             panel1.Controls.Add(comfortSpeed_button);
@@ -64,21 +64,19 @@
             panel1.Size = new Size(688, 873);
             panel1.TabIndex = 0;
             // 
-            // score_button
+            // speedTxt
             // 
-            score_button.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
-            score_button.FlatAppearance.BorderSize = 0;
-            score_button.FlatStyle = FlatStyle.System;
-            score_button.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            score_button.ForeColor = Color.White;
-            score_button.Location = new Point(218, 480);
-            score_button.Margin = new Padding(0);
-            score_button.Name = "score_button";
-            score_button.Size = new Size(112, 79);
-            score_button.TabIndex = 11;
-            score_button.Text = "0";
-            score_button.UseVisualStyleBackColor = true;
-            score_button.Click += score_button_Click;
+            speedTxt.BackgroundImage = (Image)resources.GetObject("speedTxt.BackgroundImage");
+            speedTxt.FlatAppearance.BorderSize = 2;
+            speedTxt.FlatStyle = FlatStyle.Flat;
+            speedTxt.Font = new Font("SuperFrench", 21.9999981F, FontStyle.Bold, GraphicsUnit.Point, 2);
+            speedTxt.ForeColor = Color.Transparent;
+            speedTxt.Location = new Point(195, 505);
+            speedTxt.Name = "speedTxt";
+            speedTxt.Size = new Size(104, 54);
+            speedTxt.TabIndex = 11;
+            speedTxt.Text = "0";
+            speedTxt.UseVisualStyleBackColor = true;
             // 
             // exit_Button
             // 
@@ -244,6 +242,6 @@
         private Button sportSpeed_button;
         private Button comfortSpeed_button;
         private Button exit_Button;
-        private Button score_button;
+        private Button speedTxt;
     }
 }

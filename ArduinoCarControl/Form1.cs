@@ -21,6 +21,8 @@ namespace ArduinoCarControl
             {
                 MessageBox.Show("Error opening serial port: " + ex.Message);
             }
+
+            speedTxt.Text = Convert.ToString(speed);
         }
 
         private void SendCommand(char command)
@@ -41,7 +43,7 @@ namespace ArduinoCarControl
             forwardButton_Click.Enabled = false;
             if (stopButton_Click.Enabled == false)
             {
-                sportSpeed_button.Enabled = true;
+                stopButton_Click.Enabled = true;
             }
         }
 
@@ -53,25 +55,16 @@ namespace ArduinoCarControl
             {
                 forwardButton_Click.Enabled = true;
             }
+
         }
 
         private void sportSpeed_button_Click(object sender, EventArgs e)
         {
-            SendCommand('+');
-            sportSpeed_button.Enabled = false;
-            if (comfortSpeed_button.Enabled == false)
-            {
-                comfortSpeed_button.Enabled = true;
-            }
+            IncreaseSpeed(false);
         }
         private void comfortSpeed_button_Click(object sender, EventArgs e)
         {
-            SendCommand('-');
-            comfortSpeed_button.Enabled = false;
-            if (sportSpeed_button.Enabled == false)
-            {
-                sportSpeed_button.Enabled = true;
-            }
+            IncreaseSpeed(true);
         }
 
         private void exit_Button_Click(object sender, EventArgs e)
@@ -79,9 +72,36 @@ namespace ArduinoCarControl
             Application.Exit();
         }
 
-        private void score_button_Click(object sender, EventArgs e)
+        void IncreaseSpeed(bool isInc)
         {
+            if (isInc)
+            {
+                speed -= 10;
+                if (speed < 0)
+                {
+                    speed = 0;
 
+                    comfortSpeed_button.Enabled = false;
+                    sportSpeed_button.Enabled = true;
+                }
+            }
+            else
+            {
+                speed += 10;
+                if (speed > 200)
+                {
+                    speed = 200;
+
+                    sportSpeed_button.Enabled = false;
+                    comfortSpeed_button.Enabled = true;
+
+                }
+            }
+
+
+            speedTxt.Text = Convert.ToString(speed);
+            char spd = Convert.ToChar(speed / 10 + 33);
+            SendCommand(spd);
         }
     }
 }
