@@ -55,7 +55,13 @@ namespace ArduinoCarControl
             {
                 forwardButton_Click.Enabled = true;
             }
-
+            speed = 0;
+            speedTxt.Text = Convert.ToString(speed);
+            comfortSpeed_button.Enabled = false;
+            if(comfortSpeed_button.Enabled == false)
+            {
+                comfortSpeed_button.Enabled=true;
+            }
         }
 
         private void sportSpeed_button_Click(object sender, EventArgs e)

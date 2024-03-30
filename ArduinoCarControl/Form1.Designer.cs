@@ -67,7 +67,6 @@
             // speedTxt
             // 
             speedTxt.BackgroundImage = (Image)resources.GetObject("speedTxt.BackgroundImage");
-            speedTxt.FlatAppearance.BorderSize = 2;
             speedTxt.FlatStyle = FlatStyle.Flat;
             speedTxt.Font = new Font("SuperFrench", 21.9999981F, FontStyle.Bold, GraphicsUnit.Point, 2);
             speedTxt.ForeColor = Color.Transparent;
