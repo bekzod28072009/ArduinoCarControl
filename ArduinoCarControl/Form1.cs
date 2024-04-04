@@ -1,11 +1,15 @@
+using System.IO;
 using System.IO.Ports;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
 
 namespace ArduinoCarControl
 {
     public partial class Form1 : Form
     {
         int speed = 200;
-        SerialPort serialPort = new SerialPort("COM3", 9600);
+
         public Form1()
         {
             InitializeComponent();
@@ -13,27 +17,31 @@ namespace ArduinoCarControl
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            try
-            {
-                serialPort.Open();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error opening serial port: " + ex.Message);
-            }
 
             speedTxt.Text = Convert.ToString(speed);
         }
 
         private void SendCommand(char command)
         {
-            if (serialPort.IsOpen)
+            try
             {
-                serialPort.Write(command.ToString());
+
+                IPAddress serverIP = IPAddress.Parse("192.168.68.120");
+
+                int port = 8080;
+                Socket clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+
+                clientSocket.Connect(new IPEndPoint(serverIP, port));
+
+                byte[] data = Encoding.ASCII.GetBytes(command.ToString());
+                clientSocket.Send(data);
+                clientSocket.Shutdown(SocketShutdown.Both);
+                clientSocket.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Serial port is not open.");
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -55,8 +63,7 @@ namespace ArduinoCarControl
             {
                 forwardButton_Click.Enabled = true;
             }
-            speed = 0;
-            speedTxt.Text = Convert.ToString(speed);
+
         }
 
         private void sportSpeed_button_Click(object sender, EventArgs e)

@@ -118,7 +118,7 @@
             comfortSpeed_button.Size = new Size(223, 122);
             comfortSpeed_button.TabIndex = 8;
             comfortSpeed_button.Text = "SPORT";
-            comfortSpeed_button.UseVisualStyleBackColor = false;
+            comfortSpeed_button.UseVisualStyleBackColor = true;
             comfortSpeed_button.Click += comfortSpeed_button_Click;
             // 
             // stopButton_Click
@@ -134,7 +134,7 @@
             stopButton_Click.Size = new Size(223, 139);
             stopButton_Click.TabIndex = 6;
             stopButton_Click.Text = "STOP";
-            stopButton_Click.UseVisualStyleBackColor = false;
+            stopButton_Click.UseVisualStyleBackColor = true;
             stopButton_Click.Click += stopButton_Click_Click;
             // 
             // forwardButton_Click
@@ -150,7 +150,7 @@
             forwardButton_Click.Size = new Size(223, 139);
             forwardButton_Click.TabIndex = 5;
             forwardButton_Click.Text = "START";
-            forwardButton_Click.UseVisualStyleBackColor = false;
+            forwardButton_Click.UseVisualStyleBackColor = true;
             forwardButton_Click.Click += forwardButton_Click_Click;
             // 
             // panel3
