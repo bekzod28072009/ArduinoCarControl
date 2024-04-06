@@ -41,12 +41,14 @@
             panel2 = new Panel();
             button2 = new Button();
             button1 = new Button();
+            send_button = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.Controls.Add(send_button);
             panel1.Controls.Add(speedTxt);
             panel1.Controls.Add(exit_Button);
             panel1.Controls.Add(sportSpeed_button);
@@ -213,6 +215,22 @@
             button1.TextAlign = ContentAlignment.MiddleRight;
             button1.UseVisualStyleBackColor = true;
             // 
+            // send_button
+            // 
+            send_button.BackColor = SystemColors.AppWorkspace;
+            send_button.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+            send_button.FlatAppearance.BorderSize = 0;
+            send_button.FlatStyle = FlatStyle.System;
+            send_button.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            send_button.ForeColor = Color.Black;
+            send_button.Location = new Point(521, 30);
+            send_button.Name = "send_button";
+            send_button.Size = new Size(155, 61);
+            send_button.TabIndex = 12;
+            send_button.Text = "SEND";
+            send_button.UseVisualStyleBackColor = true;
+            send_button.Click += send_button_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -242,5 +260,6 @@
         private Button comfortSpeed_button;
         private Button exit_Button;
         private Button speedTxt;
+        private Button send_button;
     }
 }
