@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            send_button = new Button();
             speedTxt = new Button();
             exit_Button = new Button();
             sportSpeed_button = new Button();
@@ -41,7 +42,6 @@
             panel2 = new Panel();
             button2 = new Button();
             button1 = new Button();
-            send_button = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -65,6 +65,22 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(688, 873);
             panel1.TabIndex = 0;
+            // 
+            // send_button
+            // 
+            send_button.BackColor = SystemColors.AppWorkspace;
+            send_button.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+            send_button.FlatAppearance.BorderSize = 0;
+            send_button.FlatStyle = FlatStyle.System;
+            send_button.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            send_button.ForeColor = Color.Black;
+            send_button.Location = new Point(538, 24);
+            send_button.Name = "send_button";
+            send_button.Size = new Size(129, 61);
+            send_button.TabIndex = 12;
+            send_button.Text = "SEND";
+            send_button.UseVisualStyleBackColor = true;
+            send_button.Click += send_button_Click;
             // 
             // speedTxt
             // 
@@ -214,22 +230,6 @@
             button1.Text = "Car Control";
             button1.TextAlign = ContentAlignment.MiddleRight;
             button1.UseVisualStyleBackColor = true;
-            // 
-            // send_button
-            // 
-            send_button.BackColor = SystemColors.AppWorkspace;
-            send_button.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
-            send_button.FlatAppearance.BorderSize = 0;
-            send_button.FlatStyle = FlatStyle.System;
-            send_button.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            send_button.ForeColor = Color.Black;
-            send_button.Location = new Point(521, 30);
-            send_button.Name = "send_button";
-            send_button.Size = new Size(155, 61);
-            send_button.TabIndex = 12;
-            send_button.Text = "SEND";
-            send_button.UseVisualStyleBackColor = true;
-            send_button.Click += send_button_Click;
             // 
             // Form1
             // 
