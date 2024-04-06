@@ -35,7 +35,7 @@ namespace ArduinoCarControl
                 clientSocket.Connect(new IPEndPoint(serverIP, port));
 
 
-                string data = "Hello, WiFi Client!";
+                string data = "Hello, WiFi Client!"; 
                 byte[] buffer = Encoding.ASCII.GetBytes(data);
                 clientSocket.Send(buffer);
 
