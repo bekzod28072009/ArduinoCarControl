@@ -117,10 +117,5 @@ namespace ArduinoCarControl
             char spd = Convert.ToChar(speed / 10 + 33);
             SendCommand(spd);
         }
-
-        private void send_button_Click(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
