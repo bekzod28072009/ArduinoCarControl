@@ -120,32 +120,7 @@ namespace ArduinoCarControl
 
         private void send_button_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                IPAddress serverIP = IPAddress.Parse("192.168.68.120"); 
-                int port = 8080; 
-
-                Socket clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-                
-                clientSocket.Connect(new IPEndPoint(serverIP, port));
-
-                
-                string data = "Hello, WiFi Client!";
-                byte[] buffer = Encoding.ASCII.GetBytes(data);
-                clientSocket.Send(buffer);
-
-                
-                clientSocket.Shutdown(SocketShutdown.Both);
-                clientSocket.Close();
-
-                MessageBox.Show("Data sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
     }
 }
