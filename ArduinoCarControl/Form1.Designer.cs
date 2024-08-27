@@ -82,7 +82,7 @@
             exit_Button.FlatStyle = FlatStyle.System;
             exit_Button.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 204);
             exit_Button.ForeColor = SystemColors.ButtonFace;
-            exit_Button.Location = new Point(266, 799);
+            exit_Button.Location = new Point(261, 812);
             exit_Button.Name = "exit_Button";
             exit_Button.Size = new Size(138, 49);
             exit_Button.TabIndex = 10;
